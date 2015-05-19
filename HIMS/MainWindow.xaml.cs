@@ -29,5 +29,10 @@ namespace HIMS
         {
             MessageBox.Show("hello");
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Designed By VIVEK AP");
+        }
     }
 }
