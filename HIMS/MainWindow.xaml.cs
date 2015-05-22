@@ -27,7 +27,9 @@ namespace HIMS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hello");
+         //   MessageBox.Show("hello");
+            ReportForm obj = new ReportForm();
+            obj.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
