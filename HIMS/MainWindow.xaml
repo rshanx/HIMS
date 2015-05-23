@@ -8,7 +8,7 @@
             <ColumnDefinition Width="28*"/>
             <ColumnDefinition Width="207*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="LoginBtn" Content="LOGIN" HorizontalAlignment="Left" Margin="17,265,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click" BorderBrush="#FF3981C2" Grid.Column="1" Grid.ColumnSpan="2" TabIndex="3">
+        <Button x:Name="LoginBtn" Content="LOGIN" HorizontalAlignment="Left" Margin="17,265,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click" BorderBrush="#FF3981C2" Grid.Column="1" Grid.ColumnSpan="2" TabIndex="3" IsDefault="True">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -18,9 +18,10 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBox x:Name="tbuser" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="17,158,0,0" TextWrapping="Wrap" Text="" ToolTip="USER NAME" VerticalAlignment="Top" Width="141" Grid.ColumnSpan="2" TabIndex="0" TextChanged="tb1_TextChanged"/>
+        <TextBox x:Name="tbuser" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="17,158,0,0" TextWrapping="Wrap" Text="" ToolTip="USER NAME" VerticalAlignment="Top" Width="141" Grid.ColumnSpan="2" TabIndex="0" TextChanged="tb1_TextChanged" SelectionChanged="tbuser_SelectionChanged" CharacterCasing="Upper"/>
         <PasswordBox x:Name="tbpwd" Grid.Column="1" HorizontalAlignment="Left" Margin="17,211,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="141" TabIndex="1"/>
         <Image x:Name="imgpp" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="10,29,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="10,29,0,0" VerticalAlignment="Top" Width="100" Source="Img/logo-login.png"/>
 
     </Grid>
 </Window>
