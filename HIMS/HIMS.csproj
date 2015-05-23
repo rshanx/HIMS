@@ -68,9 +68,6 @@
     <Compile Include="Transaction\Reception\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Transaction\Reception\OPD_Registration.xaml.cs">
-      <DependentUpon>OPD_Registration.xaml</DependentUpon>
-    </Compile>
     <Compile Include="XSD\DataSetDemo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,10 +90,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Transaction\Reception\Home.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Transaction\Reception\OPD_Registration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
