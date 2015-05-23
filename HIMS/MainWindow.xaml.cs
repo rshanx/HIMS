@@ -32,9 +32,15 @@ namespace HIMS
             obj.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void tb1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            MessageBox.Show("Designed By VIVEK AP");
+
         }
+
+
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show("Designed By VIVEK AP");
+        //}
     }
 }
