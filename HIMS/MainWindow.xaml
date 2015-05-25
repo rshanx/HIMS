@@ -1,7 +1,7 @@
 ﻿<Window x:Name="Login" x:Class="HIMS.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="LOGIN" Height="350" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="LOGIN" Height="350" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Login_Closed">
     <Grid x:Name="LOGIN" UseLayoutRounding="False" Margin="0,0,2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="55*"/>

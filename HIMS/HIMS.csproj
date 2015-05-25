@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BLL\Constants.cs" />
     <Compile Include="Report\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,10 +69,22 @@
     <Compile Include="Transaction\Reception\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Transaction\Reception\Reception.xaml.cs">
+      <DependentUpon>Reception.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XSD\DataSetDemo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDemo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XSD\DS_license.cs">
+      <DependentUpon>DS_license.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XSD\DS_license.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_license.xsd</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +103,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Transaction\Reception\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction\Reception\Reception.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +149,17 @@
     </None>
     <None Include="XSD\DataSetDemo.xss">
       <DependentUpon>DataSetDemo.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_license.xsc">
+      <DependentUpon>DS_license.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_license.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_license.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XSD\DS_license.xss">
+      <DependentUpon>DS_license.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
