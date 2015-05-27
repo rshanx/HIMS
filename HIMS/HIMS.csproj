@@ -59,6 +59,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MSTR\Master_Diagnosis.xaml.cs">
+      <DependentUpon>Master_Diagnosis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MSTR\Master_DrugGroup.xaml.cs">
+      <DependentUpon>Master_DrugGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MSTR\Master_Medicine.xaml.cs">
+      <DependentUpon>Master_Medicine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MSTR\Master_Reference.xaml.cs">
+      <DependentUpon>Master_Reference.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Registration.xaml.cs">
+      <DependentUpon>Patient_Registration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +104,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MSTR\Master_Diagnosis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MSTR\Master_DrugGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MSTR\Master_Medicine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MSTR\Master_Reference.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient_Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Transaction\Reception\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\logo-login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\V-Vek P-Tel.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
