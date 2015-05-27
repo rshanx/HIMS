@@ -18,13 +18,14 @@ using HIMS.BLL;
 using HIMS.XSD;
 using HIMS.Transaction.Reception;
 using System.Configuration;
+using MahApps.Metro.Controls;
 
 namespace HIMS
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {
