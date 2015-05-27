@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_license" targetNamespace="http://tempuri.org/DS_license.xsd" xmlns:mstns="http://tempuri.org/DS_license.xsd" xmlns="http://tempuri.org/DS_license.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HIMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HIMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HIMS.Properties.Settings.GlobalReference.Default.HIMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_license" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_license" msprop:Generator_UserDSName="DS_license">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_license" msprop:Generator_TableClassName="dt_licenseDataTable" msprop:Generator_TableVarName="tabledt_license" msprop:Generator_RowChangedName="dt_licenseRowChanged" msprop:Generator_TablePropName="dt_license" msprop:Generator_RowDeletingName="dt_licenseRowDeleting" msprop:Generator_RowChangingName="dt_licenseRowChanging" msprop:Generator_RowEvHandlerName="dt_licenseRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_licenseRowDeleted" msprop:Generator_RowClassName="dt_licenseRow" msprop:Generator_UserTableName="dt_license" msprop:Generator_RowEvArgName="dt_licenseRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="hospital_id" msprop:Generator_ColumnVarNameInTable="columnhospital_id" msprop:Generator_ColumnPropNameInRow="hospital_id" msprop:Generator_ColumnPropNameInTable="hospital_idColumn" msprop:Generator_UserColumnName="hospital_id" type="xs:string" />
+              <xs:element name="is_first_time" msprop:Generator_ColumnVarNameInTable="columnis_first_time" msprop:Generator_ColumnPropNameInRow="is_first_time" msprop:Generator_ColumnPropNameInTable="is_first_timeColumn" msprop:Generator_UserColumnName="is_first_time" type="xs:string" minOccurs="0" />
+              <xs:element name="trial_start_date" msprop:Generator_ColumnVarNameInTable="columntrial_start_date" msprop:Generator_ColumnPropNameInRow="trial_start_date" msprop:Generator_ColumnPropNameInTable="trial_start_dateColumn" msprop:Generator_UserColumnName="trial_start_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="trial_end_date" msprop:Generator_ColumnVarNameInTable="columntrial_end_date" msprop:Generator_ColumnPropNameInRow="trial_end_date" msprop:Generator_ColumnPropNameInTable="trial_end_dateColumn" msprop:Generator_UserColumnName="trial_end_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="is_purchased" msprop:Generator_ColumnVarNameInTable="columnis_purchased" msprop:Generator_ColumnPropNameInRow="is_purchased" msprop:Generator_ColumnPropNameInTable="is_purchasedColumn" msprop:Generator_UserColumnName="is_purchased" type="xs:string" minOccurs="0" />
+              <xs:element name="license_key_p1" msprop:Generator_ColumnVarNameInTable="columnlicense_key_p1" msprop:Generator_ColumnPropNameInRow="license_key_p1" msprop:Generator_ColumnPropNameInTable="license_key_p1Column" msprop:Generator_UserColumnName="license_key_p1" type="xs:string" minOccurs="0" />
+              <xs:element name="license_key_p2" msdata:Caption="license_key_p1" msprop:Generator_ColumnVarNameInTable="columnlicense_key_p2" msprop:Generator_ColumnPropNameInRow="license_key_p2" msprop:Generator_ColumnPropNameInTable="license_key_p2Column" msprop:Generator_UserColumnName="license_key_p2" type="xs:string" minOccurs="0" />
+              <xs:element name="license_key_p3" msprop:Generator_ColumnVarNameInTable="columnlicense_key_p3" msprop:Generator_ColumnPropNameInRow="license_key_p3" msprop:Generator_ColumnPropNameInTable="license_key_p3Column" msprop:Generator_UserColumnName="license_key_p3" type="xs:string" minOccurs="0" />
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="dt_licenseKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dt_license" />
+      <xs:field xpath="mstns:hospital_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
