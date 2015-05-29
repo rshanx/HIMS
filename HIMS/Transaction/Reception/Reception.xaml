@@ -1,0 +1,94 @@
+﻿<Window x:Class="HIMS.Transaction.Reception.Reception"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reception" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+    <Grid Margin="0,-4,0,4">
+        <GroupBox Header="Search" HorizontalAlignment="Left" Margin="28,28,0,0" VerticalAlignment="Top" Height="168" Width="311">
+            <Grid>
+                <Image HorizontalAlignment="Left" Height="106" Margin="12,10,0,0" VerticalAlignment="Top" Width="100" Source="/HIMS;component/Img/logo-login.png"/>
+                <Label Content="Case No.:" HorizontalAlignment="Left" Margin="111,20,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ref No.:" HorizontalAlignment="Left" Margin="111,68,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="119,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="119,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Button Content="R" HorizontalAlignment="Left" Margin="244,46,0,0" VerticalAlignment="Top" Width="33"/>
+                <Button Content="R" HorizontalAlignment="Left" Margin="244,91,0,0" VerticalAlignment="Top" Width="33"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Patient Detail" HorizontalAlignment="Left" Margin="353,28,0,0" VerticalAlignment="Top" Height="168" Width="981">
+            <Grid Margin="0,-3,0,3">
+                <Label Content="Name :" HorizontalAlignment="Left" Margin="44,49,0,0" VerticalAlignment="Top"/>
+                <Label Content="Dynamic Value" HorizontalAlignment="Left" Margin="110,49,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ref By:" HorizontalAlignment="Left" Margin="44,82,0,0" VerticalAlignment="Top"/>
+                <Label Content="Dynamic Value" HorizontalAlignment="Left" Margin="110,82,0,0" VerticalAlignment="Top"/>
+                <Label Content="Sex / Age:" HorizontalAlignment="Left" Margin="374,49,0,0" VerticalAlignment="Top"/>
+                <Label Content="Dynamic Value" HorizontalAlignment="Left" Margin="440,49,0,0" VerticalAlignment="Top"/>
+                <Label Content="Mobile :" HorizontalAlignment="Left" Margin="374,82,0,0" VerticalAlignment="Top"/>
+                <Label Content="Dynamic Value" HorizontalAlignment="Left" Margin="440,82,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Appointment Sheet" HorizontalAlignment="Left" Margin="27,352,0,0" VerticalAlignment="Top" Height="281" Width="744">
+            <Grid>
+                <Label Content="Purpose:" HorizontalAlignment="Left" Margin="6,9,0,0" VerticalAlignment="Top"/>
+                <Label Content="Date:" HorizontalAlignment="Left" Margin="6,92,0,0" VerticalAlignment="Top"/>
+                <Label Content="Apt Time:" HorizontalAlignment="Left" Margin="6,125,0,0" VerticalAlignment="Top"/>
+                <Label Content="Arrival Time:" HorizontalAlignment="Left" Margin="142,126,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" Width="241">
+                    <MenuItem Header="New Case"/>
+                </ComboBox>
+                <DatePicker HorizontalAlignment="Left" Margin="66,91,0,0" VerticalAlignment="Top" Width="241"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="66,129,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="68"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="229,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="78"/>
+                <Button Content="    Confirm&#xA; Appointment" HorizontalAlignment="Left" Margin="16,179,0,0" VerticalAlignment="Top" Width="93" Height="51"/>
+                <Button x:Name="btnCancel" Content="    Cancel&#xA; Appointment" HorizontalAlignment="Left" Margin="115,179,0,0" VerticalAlignment="Top" Width="93" Height="51" Click="Button_Click"/>
+                <Button x:Name="btnTel" Content="  Telephonic&#xA; Appointment" HorizontalAlignment="Left" Margin="214,179,0,0" VerticalAlignment="Top" Width="93" Height="51" Click="tabtn_Click"/>
+                <GroupBox x:Name="cancelgb" Header="CANCELLATION REASON" HorizontalAlignment="Left" Margin="318,9,0,0" VerticalAlignment="Top" Height="108" Width="404" AllowDrop="True" IsEnabled="False">
+                    <Grid>
+                        <Label Content="Reason:" HorizontalAlignment="Left" Margin="9,3,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtCancel" HorizontalAlignment="Left" Height="23" Margin="16,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
+                        <Button Content="CANCEL" HorizontalAlignment="Left" Margin="323,34,0,0" VerticalAlignment="Top" Width="56"/>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="tagb" Header="TELEPHONIC APPOINTMENT" HorizontalAlignment="Left" Margin="318,129,0,0" VerticalAlignment="Top" Height="102" Width="404" IsEnabled="False">
+                    <Grid>
+                        <Label Content="Purpose:" HorizontalAlignment="Left" Margin="9,6,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Height="23" Margin="18,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258"/>
+                        <Button Content="CONFIRM" HorizontalAlignment="Left" Margin="281,34,0,0" VerticalAlignment="Top" Width="61"/>
+
+                    </Grid>
+
+
+                </GroupBox>
+                <Label Content="Status:" HorizontalAlignment="Left" Margin="6,49,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="66,50,0,0" VerticalAlignment="Top" Width="68">
+                    <MenuItem Header="Pending"/>
+                </ComboBox>
+                <Label Content="Dr:" HorizontalAlignment="Left" Margin="139,49,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="169,50,0,0" VerticalAlignment="Top" Width="138">
+                    <MenuItem Header="Dr. Vivek P"/>
+                </ComboBox>
+
+
+
+
+
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Header="Navigate" HorizontalAlignment="Left" Margin="27,212,0,0" VerticalAlignment="Top" Height="123" Width="744">
+            <Grid>
+                <Button Content="OPD REGISTRATION" HorizontalAlignment="Left" Margin="28,9,0,0" VerticalAlignment="Top" Width="191" Height="72"/>
+                <Button Content="Search Patient" HorizontalAlignment="Left" Margin="248,9,0,0" VerticalAlignment="Top" Width="191" Height="72"/>
+                <Button Content="Detail Correction" HorizontalAlignment="Left" Margin="468,9,0,0" VerticalAlignment="Top" Width="191" Height="72"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Todays Appointment" HorizontalAlignment="Left" Margin="784,209,0,0" VerticalAlignment="Top" Height="424" Width="550">
+
+            <DataGrid HorizontalAlignment="Left" Margin="820,270,0,0" VerticalAlignment="Top" Height="361" Width="465"/>
+        </GroupBox>
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="28,649,0,0" VerticalAlignment="Top" Width="743" Height="69"/>
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="788,649,0,0" VerticalAlignment="Top" Width="546" Height="69"/>
+    </Grid>
+</Window>
