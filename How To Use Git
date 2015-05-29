@@ -1,0 +1,21 @@
+steps to clone(copy) my project from github...
+
+1)open vs2013
+2)go to team explorer
+3)click plug icon (which is for team project located right side of home)
+4)navigate "Local Git Repos" down
+5)click clone 
+add url as - https://github.com/vvkpr8993/HIMS.git
+also save locally to your harddisk in below textbox
+ hit clone..
+
+
+6)after done..
+open saved repos from your local machine
+7) make change 
+8)hit commit and push your changed code 
+it may ask you your git credentials
+
+provide uderid pwd of github.. 
+
+done...!
