@@ -30,6 +30,7 @@ namespace HIMS
         public MainWindow()
         {
             InitializeComponent();
+            tbuser.Focus();
         }
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["HIMS.Properties.Settings.HIMSConnectionString"].ConnectionString);
         SqlCommand cmd,cmd_license;
