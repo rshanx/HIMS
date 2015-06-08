@@ -125,7 +125,7 @@ namespace HIMS
             try
             {
                 Encryption enc = new Encryption();
-                string userid = tbuser.Text.ToString();
+                string userid = tbuser_SelectionChanged.Text.ToString();
                 string pwd = enc.encrypt(tbpwd.Password.ToString());
                 bool result = logincheck(userid, pwd);
 
