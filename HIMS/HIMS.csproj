@@ -67,26 +67,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MSTR\Master_Diagnosis.xaml.cs">
-      <DependentUpon>Master_Diagnosis.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MSTR\Master_DrugGroup.xaml.cs">
-      <DependentUpon>Master_DrugGroup.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MSTR\Master_Medicine.xaml.cs">
-      <DependentUpon>Master_Medicine.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MSTR\Master_Reference.xaml.cs">
-      <DependentUpon>Master_Reference.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Patient_Registration.xaml.cs">
-      <DependentUpon>Patient_Registration.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Report\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +75,9 @@
     </Compile>
     <Compile Include="Transaction\Reception\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Transaction\Reception\Reception.xaml.cs">
       <DependentUpon>Reception.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="XSD\DataSetDemo.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_license.xsd</DependentUpon>
     </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -123,26 +105,10 @@
     <Compile Include="BLL\Encryption.cs" />
     <Compile Include="BLL\General_Utilities.cs" />
     <Compile Include="BLL\Version_Controller.cs" />
-    <Page Include="MSTR\Master_Diagnosis.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MSTR\Master_DrugGroup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MSTR\Master_Medicine.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MSTR\Master_Reference.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Patient_Registration.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Page Include="Transaction\Reception\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\V-Vek P-Tel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextFile2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

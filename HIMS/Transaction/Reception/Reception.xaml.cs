@@ -23,5 +23,43 @@ namespace HIMS.Transaction.Reception
         {
             InitializeComponent();
         }
+        int i = 0,j=0;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            i++;
+            if (i == 1)
+            {
+                cancelgb.IsEnabled = true;
+                txtCancel.Focus();
+                ///tagb.IsEnabled = false;
+                ///
+            }
+            else
+            {
+                cancelgb.IsEnabled = false;
+                i=0;
+                txtCancel.Text = "";
+                btnCancel.Focus();
+            }
+            
+        }
+
+        private void tabtn_Click(object sender, RoutedEventArgs e)
+        {
+            j++;
+            if(j==1)
+            {
+                tagb.IsEnabled = true;
+                txtTel.Focus();
+            }
+            else
+            {
+                tagb.IsEnabled = false;
+                j = 0;
+                txtTel.Text = "";
+                btnTel.Focus();
+            }
+            
+        }
     }
 }
