@@ -1,0 +1,105 @@
+﻿<Window x:Class="HIMS.Transaction.OPD.OPD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OPD" Height="1234.884" Width="1288.541" Closed="Window_Closed" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <GroupBox Header="Search" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="204" Width="359">
+            <Grid>
+                <Image HorizontalAlignment="Left" Height="106" Margin="12,10,0,0" VerticalAlignment="Top" Width="100" Source="/HIMS;component/Img/logo-login.png"/>
+                <Label Content="Case No.:" HorizontalAlignment="Left" Margin="111,20,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ref No.:" HorizontalAlignment="Left" Margin="111,68,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="119,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="119,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                <Button Content="R" HorizontalAlignment="Left" Margin="288,46,0,0" VerticalAlignment="Top" Width="33"/>
+                <Button Content="R" HorizontalAlignment="Left" Margin="288,91,0,0" VerticalAlignment="Top" Width="33"/>
+                <Button Content="NEW" HorizontalAlignment="Left" Margin="118,135,0,0" VerticalAlignment="Top" Width="51"/>
+                <Button Content="OLD" HorizontalAlignment="Left" Margin="169,135,0,0" VerticalAlignment="Top" Width="49"/>
+                <Button Content="WAITING" HorizontalAlignment="Left" Margin="218,135,0,0" VerticalAlignment="Top" Width="56"/>
+                <Button Content="CLEAR" HorizontalAlignment="Left" Margin="274,135,0,0" VerticalAlignment="Top" Width="53"/>
+
+            </Grid>
+        </GroupBox>
+        <Expander Header="PATIENT DETAILS" HorizontalAlignment="Left" Margin="374,10,0,0" VerticalAlignment="Top" Height="204" Width="789" IsExpanded="True">
+            <Grid>
+                <Label Content="Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Sex/Age:" HorizontalAlignment="Left" Margin="11,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.826,0.586" Width="71"/>
+                <Label Content="Mobile:" HorizontalAlignment="Left" Margin="13,72,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ref By:" HorizontalAlignment="Left" Margin="13,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.621,1.694"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.596,-0.904"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="120,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.596,-0.904"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="120,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.596,-0.904"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="120,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.596,-0.904"/>
+
+
+
+            </Grid>
+        </Expander>
+        <Expander x:Name="vitalparameters" Header="VITAL PARAMETERS" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="359" Height="113" IsExpanded="True">
+
+            <Grid>
+                <Label Content="WT" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,9,0,0"/>
+                <Label Content="PR" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="224,10,0,0"/>
+                <Label Content="EXTRA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="224,35,0,0"/>
+                <Label Content="TM" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="6,0,0,11" RenderTransformOrigin="0.921,1.231"/>
+                <Label Content="BP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="115,36,0,0"/>
+                <Label Content="HT" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="116,10,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="40,10,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="271,11,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="40,35,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Margin="149,10,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Margin="149,36,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Margin="271,37,0,0"/>
+
+
+
+            </Grid>
+
+        </Expander>
+        <GroupBox Header="COMPLAIN" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top" Height="125" Width="359">
+            <TextBox HorizontalAlignment="Left" Height="82" TextWrapping="Wrap" Text="COMPLAIN" VerticalAlignment="Top" Width="340"/>
+        </GroupBox>
+        <GroupBox Header="EXAMINATION" HorizontalAlignment="Left" Margin="10,473,0,0" VerticalAlignment="Top" Height="121" Width="359">
+            <TextBox HorizontalAlignment="Left" Height="81" TextWrapping="Wrap" Text="EXAMINATION" VerticalAlignment="Top" Width="340"/>
+        </GroupBox>
+        <GroupBox Header="DIAGNOSIS" HorizontalAlignment="Left" Margin="374,220,0,0" VerticalAlignment="Top" Height="187" Width="789">
+            <Grid>
+                <Label Content="Diagnosis:" HorizontalAlignment="Left" Margin="13,8,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="282"/>
+                <DataGrid HorizontalAlignment="Left" Margin="18,51,0,0" VerticalAlignment="Top" Height="70" Width="734"/>
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="SUGGESTED MEDICINES" HorizontalAlignment="Left" Margin="374,412,0,0" VerticalAlignment="Top" Height="182" Width="789">
+            <Grid>
+                <Label Content="Medicines:" HorizontalAlignment="Left" Margin="13,8,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="282"/>
+                <DataGrid HorizontalAlignment="Left" Margin="18,51,0,0" VerticalAlignment="Top" Height="70" Width="734"/>
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="" HorizontalAlignment="Left" Margin="10,599,0,0" VerticalAlignment="Top" Height="182" Width="1153">
+            <TabControl Margin="10,0,-2,17" >
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </GroupBox>
+
+
+
+    </Grid>
+</Window>

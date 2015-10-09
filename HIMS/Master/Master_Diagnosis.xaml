@@ -1,0 +1,56 @@
+﻿<Controls:MetroWindow x:Class="HIMS.MSTR.Master_Diagnosis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  WindowStartupLocation="CenterScreen"
+                        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Diagnosis Master" Height="601.325" Width="576">
+    <Grid>
+        <GroupBox Header="Diagnosis" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="546" Width="545">
+            <Grid Margin="24,50,-24,-50">
+
+
+                <GroupBox Header="SELECT DIAGNOSIS" HorizontalAlignment="Left" Margin="-15,-41,0,0" VerticalAlignment="Top" Height="77" Width="504">
+                    <Grid>
+                        <Label Content="Diagnosis" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <Button Content="REFRESH" HorizontalAlignment="Left" Margin="371,11,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.453,-0.5"/>
+                        <ComboBox HorizontalAlignment="Left" Margin="98,10,0,0" VerticalAlignment="Top" Width="255"/>
+
+
+
+                    </Grid>
+                </GroupBox>
+
+
+                <GroupBox Header="Diagnosis DETAIL" HorizontalAlignment="Left" Margin="-11,53,0,0" VerticalAlignment="Top" Height="296" Width="500">
+                    <Grid>
+
+                        <Label Content="Sr No:" HorizontalAlignment="Left" Margin="13,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.119,0.5"/>
+                        <Label Content="Diagnosis Name:" HorizontalAlignment="Left" Margin="13,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.929,1.692"/>
+                        <Label Content="Course Of Medicine:" HorizontalAlignment="Left" Margin="14,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.929,1.692"/>
+                        <Label Content="Necessary Information:" HorizontalAlignment="Left" Margin="14,140,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.929,1.692"/>
+                        <Label Content="Remarks:" HorizontalAlignment="Left" Margin="17,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.929,1.692"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="100,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="16,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="16,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="16,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" TextChanged="TextBox_TextChanged"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="393"/>
+
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="" HorizontalAlignment="Left" Margin="0,366,0,0" VerticalAlignment="Top" Height="88" Width="489">
+                    <Grid>
+
+                        <Button Content="NEW" HorizontalAlignment="Left" Margin="12,9,0,0" VerticalAlignment="Top" Width="75"/>
+                        <Button Content="SAVE" HorizontalAlignment="Left" Margin="104,9,0,0" VerticalAlignment="Top" Width="75"/>
+                        <Button Content="LIST" HorizontalAlignment="Left" Margin="194,9,0,0" VerticalAlignment="Top" Width="75"/>
+                        <Button Content="CLOSE" HorizontalAlignment="Left" Margin="291,9,0,0" VerticalAlignment="Top" Width="75"/>
+                        <Button Content="SAVE &amp; EXIT" HorizontalAlignment="Left" Margin="381,9,0,0" VerticalAlignment="Top" Width="75"/>
+
+
+                    </Grid>
+                </GroupBox>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Controls:MetroWindow>

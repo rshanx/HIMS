@@ -1,0 +1,40 @@
+﻿<Window x:Class="HIMS.Report.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+        Title="Pie Chart" Height="1234.884" WindowStartupLocation="CenterScreen"  Width="1288.541" Closed="Window_Closed" ResizeMode="NoResize" WindowState="Maximized">
+   
+        <!--<ComboBox HorizontalAlignment="Left" Margin="76,122,0,0" VerticalAlignment="Top" Width="120">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+        </ComboBox>-->
+        <!--<Chart:PieChart x:Name="pie" ChartTitle="ABX" ChartSubTitle="qwe" Foreground="Aquamarine"  Background="AliceBlue" >
+            <Chart:PieChart.Series>
+                <Chart:ChartSeries
+                                   ItemsSource="{Binding Path=CountryCollection}"
+                                  SeriesTitle="Errors"
+                        DisplayMember="Name"
+                        ValueMember="Population">
+                    
+                </Chart:ChartSeries>
+            </Chart:PieChart.Series>
+        </Chart:PieChart>-->
+
+        <Chart:PieChart
+        ChartTitle="Minimal Pie Chart"
+        ChartSubTitle="Chart with fixed width and height"
+     >
+            <Chart:PieChart.Series>
+                <Chart:ChartSeries x:Name="qwe"
+                    
+                SeriesTitle="Errors"
+                DisplayMember="Category"
+                ValueMember="Number"
+               />
+            </Chart:PieChart.Series>
+        </Chart:PieChart>
+
+
+    
+</Window>
+

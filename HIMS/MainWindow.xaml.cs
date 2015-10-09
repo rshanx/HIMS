@@ -13,12 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+
 using System.Data;
 using HIMS.BLL;
 using HIMS.XSD;
 using HIMS.Transaction.Reception;
 using System.Configuration;
 using MahApps.Metro.Controls;
+using System.Threading;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace HIMS
 {
@@ -38,14 +41,49 @@ namespace HIMS
         DataSet ds;
         DataTable dt,dt_license;
         
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             #region commented
             //   MessageBox.Show("hello");
          //   ReportForm obj = new ReportForm();
             //   obj.Show();
             #endregion
+            //loading.IsActive = true;
+            //Thread.Sleep(3000);
+            #region please wait dialog
+           // ShowProgressDialog();
+            var controller = await this.ShowProgressAsync("Please wait...","We will logged you in..!");
 
+            await Task.Delay(2000);
+
+            //controller.SetCancelable(true);
+
+           // double i = 0.0;
+            //while (i < 3.0)
+            //{
+            //    double val = (i / 100.0) * 50.0;
+            //    controller.SetProgress(val);
+            //    controller.SetMessage("Processing: ...");
+
+            //    if (controller.IsCanceled)
+            //        break; //canceled progressdialog auto closes.
+
+            //    i += 1.0;
+
+            //    await Task.Delay(100);
+            //}
+
+            await controller.CloseAsync();
+
+            //if (controller.IsCanceled)
+            //{
+            //    await this.ShowMessageAsync("No cupcakes!", "You stopped baking!");
+            //}
+            //else
+            //{
+            //    await this.ShowMessageAsync("Cupcakes!", "Your cupcakes are finished! Enjoy!");
+            //}
+            #endregion
             //#region Verify licensing
             //bool is_first_time_login;
             //try
@@ -133,7 +171,9 @@ namespace HIMS
                 if (result)
                 {
                     //Home objhome = new Home();
-                    Reception objhome = new Reception();
+                    //Reception objhome = new Reception();
+                    Dashboard objhome = new Dashboard();
+                    //loading.IsActive = false;
                     this.Hide();
                     objhome.Show();
                 }
@@ -187,7 +227,102 @@ namespace HIMS
             
         }
 
+        //private async void ShowProgressDialog(object sender, RoutedEventArgs e)
+        //{
+        //    var controller = await this.ShowProgressAsync("Please wait...", "We are baking some cupcakes!");
 
+        //    await TaskEx.Delay(5000);
+
+        //    controller.SetCancelable(true);
+
+        //    double i = 0.0;
+        //    while (i < 6.0)
+        //    {
+        //        double val = (i / 100.0) * 20.0;
+        //        controller.SetProgress(val);
+        //        controller.SetMessage("Baking cupcake: " + i + "...");
+
+        //        if (controller.IsCanceled)
+        //            break; //canceled progressdialog auto closes.
+
+        //        i += 1.0;
+
+        //        await TaskEx.Delay(2000);
+        //    }
+
+        //    await controller.CloseAsync();
+
+        //    if (controller.IsCanceled)
+        //    {
+        //        await this.ShowMessageAsync("No cupcakes!", "You stopped baking!");
+        //    }
+        //    else
+        //    {
+        //        await this.ShowMessageAsync("Cupcakes!", "Your cupcakes are finished! Enjoy!");
+        //    }
+        //}
+        //public static Task<ProgressDialogController> ShowProgressAsync(this MetroWindow window, string title, string message, bool isCancelable = false, MetroDialogSettings settings = null)
+        //{
+        //    window.Dispatcher.VerifyAccess();
+
+        //    return HandleOverlayOnShow(settings, window).ContinueWith(z =>
+        //    {
+        //        return ((Task<ProgressDialogController>)window.Dispatcher.Invoke(new Func<Task<ProgressDialogController>>(() =>
+        //        {
+        //            var dialog = new ProgressDialog(window)
+        //            {
+        //                Message = message,
+        //                Title = title,
+        //                IsCancelable = isCancelable
+        //            };
+
+        //            if (settings == null)
+        //            {
+        //                settings = window.MetroDialogOptions;
+        //            }
+
+        //            dialog.NegativeButtonText = settings.NegativeButtonText;
+
+        //            SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+        //            dialog.SizeChangedHandler = sizeHandler;
+
+        //            return dialog.WaitForLoadAsync().ContinueWith(x =>
+        //            {
+        //                if (DialogOpened != null)
+        //                {
+        //                    window.Dispatcher.BeginInvoke(new Action(() => DialogOpened(window, new DialogStateChangedEventArgs())));
+        //                }
+
+        //                return new ProgressDialogController(dialog, () =>
+        //                {
+        //                    dialog.OnClose();
+
+        //                    if (DialogClosed != null)
+        //                    {
+        //                        window.Dispatcher.BeginInvoke(new Action(() => DialogClosed(window, new DialogStateChangedEventArgs())));
+        //                    }
+
+        //                    Task closingTask = (Task)window.Dispatcher.Invoke(new Func<Task>(() => dialog._WaitForCloseAsync()));
+        //                    return closingTask.ContinueWith(a =>
+        //                    {
+        //                        return (Task)window.Dispatcher.Invoke(new Func<Task>(() =>
+        //                        {
+        //                            window.SizeChanged -= sizeHandler;
+
+        //                            window.metroDialogContainer.Children.Remove(dialog); //remove the dialog from the container
+
+        //                            return HandleOverlayOnHide(settings, window);
+        //                        }));
+        //                    }).Unwrap();
+        //                });
+        //            });
+        //        })));
+        //    }).Unwrap();
+        //}
+        //private static Task HandleOverlayOnShow(MetroDialogSettings settings, MetroWindow window)
+        //{
+        //    return (settings == null || settings.AnimateShow ? window.ShowOverlayAsync() : Task.Factory.StartNew(() => window.Dispatcher.Invoke(new Action(window.ShowOverlay))));
+        //}
         //private void Button_Click_1(object sender, RoutedEventArgs e)
         //{
         //    MessageBox.Show("Designed By VIVEK AP");

@@ -1,0 +1,17 @@
+﻿<Window x:Class="HIMS.Master.Master_Data_Retrieve"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Master_Data_Retrieve" Height="1234.884" WindowStartupLocation="CenterScreen"  Width="1288.541" Closed="Window_Closed" ResizeMode="NoResize" WindowState="Maximized">
+    <Grid>
+        <ComboBox x:Name="combotbl" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME" HorizontalAlignment="Left" Margin="80,56,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="combotbl_SelectionChanged"/>
+        <ComboBox x:Name="combocol" Visibility="Hidden" DisplayMemberPath="COLUMN_NAME" SelectedValuePath="COLUMN_NAME" HorizontalAlignment="Left" Margin="256,56,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="combotbl_SelectionChanged">
+            <!--<ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding Title}" IsChecked="{Binding path}"
+                </DataTemplate>
+            </ComboBox.ItemTemplate>-->
+        </ComboBox>
+        <DataGrid x:Name="tblGrid" HorizontalAlignment="Left" Margin="86,127,0,0" VerticalAlignment="Top" Width="1108" Height="1021"/>
+
+    </Grid>
+</Window>

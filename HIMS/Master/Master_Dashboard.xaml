@@ -1,0 +1,26 @@
+﻿<Controls:MetroWindow x:Class="HIMS.Master.Master_Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"  
+                       Height="468" Width="966" WindowStartupLocation="CenterScreen" 
+                      Icon="../Img/Google Profile.ico"
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+         ResizeMode="NoResize" 
+        Title="Master_Dashboard" Closed="MetroWindow_Closed">
+    <Grid Margin="0,0,2,0" Background="#FF559AC9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="224*"/>
+        </Grid.ColumnDefinitions>
+        <Controls:Tile x:Name="Medicine" Content="MEDICINE" Margin="69,69,687,229" FontSize="24" Click="Reception_Click" Grid.Column="1" >
+
+        </Controls:Tile>
+        <Controls:Tile x:Name="Reception_Copy" Content="DIAGNOSIS" Margin="231,70,497,230" FontSize="24" Background="#CC38DE38" Width="Auto" Grid.Column="1" Click="Reception_Copy_Click" />
+        <Controls:Tile x:Name="Reception_Copy1" Content="DRUGGROUP" Margin="610,70,148,230" FontSize="24" Background="#CCEC6A1F" Grid.Column="1" Click="Reception_Copy1_Click" />
+        <Controls:Tile x:Name="Reception_Copy2" Content="REFERENCE" Margin="69,229,687,69" FontSize="24" Background="#CCDA11B5" Grid.Column="1" Click="Reception_Copy2_Click" />
+        <Controls:Tile x:Name="Reception_Copy3" Content="SETTINGS" Margin="609,229,147,69" FontSize="24" Background="#CCE40D47" Grid.Column="1" />
+        <Controls:Tile x:Name="Reception_Copy4" Content="MASTERDATA" Margin="231,229,497,69" FontSize="24" Background="#CC0F0F0F" Width="Auto" Grid.Column="1" Click="Reception_Copy4_Click" />
+        <Controls:Tile x:Name="Reception_Copy5" Content="CONTACT US" Margin="426,229,309,69" FontSize="24" Background="#CC510DE4" Width="Auto" Grid.Column="1" Click="Reception_Copy5_Click" />
+
+    </Grid>
+    </Controls:MetroWindow>

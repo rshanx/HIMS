@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.Threading.Tasks;
+using System.Data;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace HIMS.BLL
 {
     class General_Utilities
     {
+
+        #region database var
+        
+        #endregion
+
         #region Added By Vivek On 22-05-2015 Amount To Word Funtions
 
         public static String amount_to_word(int number)
@@ -163,5 +172,172 @@ namespace HIMS.BLL
         }
 
         #endregion
+
+        #region Added By Vivek on 22-08-2015 Get Next Doc No
+        public static int GetNextDocNoFromTable(string table_name,string column_name)
+        {
+            try
+            {
+                int next_doc_no=0;
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["HIMS.Properties.Settings.HIMSConnectionString"].ConnectionString);
+                SqlCommand cmd,cmd1;
+                SqlDataAdapter da,da1;
+                DataTable dt=new DataTable();
+                DataTable dt1 = new DataTable();
+                //query to retrieve primary key from table name
+                string q = "SELECT column_name FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE OBJECTPROPERTY(OBJECT_ID(constraint_name), 'IsPrimaryKey') = 1 "+
+                            "AND table_name = '"+table_name+"'";
+                con.Open();
+                cmd = new SqlCommand(q, con);
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if(dt.Rows.Count >0)
+                {
+                    //DataRow[] dr= dt.Select("column_name like '" + column_name + "'");
+                    string column;
+                    //if (dr[0][0].ToString() != string.Empty)
+                    //{
+                    //    column = dr[0][0].ToString();
+                    //}
+                    //else if(column_name != string.Empty)
+                    //{
+                    //    column = column_name;
+                    //}
+                    //else
+                    //{
+                    //    return -888;//no column passed
+                    //}
+                    column = dt.Rows[0][0].ToString();
+                    q = string.Empty;
+                    q="select "+column+" from "+table_name+" order by "+column+" DESC";
+                    cmd1 = new SqlCommand(q,con);
+                    da1 = new SqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+                    if(dt1.Rows.Count >0)
+                    {
+                        next_doc_no= Convert.ToInt32(dt1.Rows[0][0])+1;
+                    }
+                    else
+                    {
+                        next_doc_no= 1;
+                    }
+                }
+                else
+                {
+                    //no primary key in table
+                    return -999;
+                }
+                return next_doc_no;
+            }
+            catch(Exception ex)
+            {
+                return -1;
+            }
+            
+        }
+        #endregion
+
+        #region Added By Vivek as on 23-08-2015 to get all list of table names from db
+        public static DataTable GetTables()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["HIMS.Properties.Settings.HIMSConnectionString"].ConnectionString);
+                SqlCommand cmd;
+                SqlDataAdapter da;
+                DataTable dt=new DataTable();
+                
+                //query to retrieve table name
+                string q = "SELECT [TABLE_NAME] FROM INFORMATION_SCHEMA.TABLES";
+                con.Open();
+                cmd = new SqlCommand(q, con);
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    return dt;                
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+        #endregion
+
+        #region Added by Vivek as on 23-08-2015 to get all column name from table
+        public static DataTable GetColumns(string table)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["HIMS.Properties.Settings.HIMSConnectionString"].ConnectionString);
+                SqlCommand cmd;
+                SqlDataAdapter da;
+                DataTable dt = new DataTable();
+
+                //query to retrieve table name
+                string q = "SELECT [COLUMN_NAME] FROM INFORMATION_SCHEMA.COLUMNS where [TABLE_NAME]='"+table+"'";
+                con.Open();
+                cmd = new SqlCommand(q, con);
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+        }
+        #endregion
+
+        //#region Added by Vivek as on 16-09-2015 to show please wait dialog
+        //private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        //{
+        //    var controller = await this.ShowProgressAsync("Please wait...", "We will logged you in..!");
+
+        //    await Task.Delay(1000);
+
+        //    controller.SetCancelable(true);
+
+        //    double i = 0.0;
+        //    while (i < 3.0)
+        //    {
+        //        double val = (i / 100.0) * 50.0;
+        //        controller.SetProgress(val);
+        //        controller.SetMessage("Processing: ...");
+
+        //        if (controller.IsCanceled)
+        //            break; //canceled progressdialog auto closes.
+
+        //        i += 1.0;
+
+        //        await Task.Delay(1000);
+        //    }
+
+        //    await controller.CloseAsync();
+
+        //    //if (controller.IsCanceled)
+        //    //{
+        //    //    await this.ShowMessageAsync("No cupcakes!", "You stopped baking!");
+        //    //}
+        //    //else
+        //    //{
+        //    //    await this.ShowMessageAsync("Cupcakes!", "Your cupcakes are finished! Enjoy!");
+        //    //}
+        //}
+        //#endregion
+
     }
 }

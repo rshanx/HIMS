@@ -13,6 +13,22 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\vs\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +49,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A8F81F060A76DE7FEB9B841F905A6BA5E87C4120</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HIMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\..\..\..\HIMS 24-8-15\HIMS\HIMS\HIMS\bin\Debug\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=1.1.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
@@ -67,22 +98,70 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Report\ReportForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Report\ReportForm.Designer.cs">
-      <DependentUpon>ReportForm.cs</DependentUpon>
+    <Compile Include="Master\Master_Dashboard.xaml.cs">
+      <DependentUpon>Master_Dashboard.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Transaction\Reception\Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="Master\Master_Data_Retrieve.xaml.cs">
+      <DependentUpon>Master_Data_Retrieve.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master\Master_Diagnosis.xaml.cs">
+      <DependentUpon>Master_Diagnosis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Master_DrugGroup.xaml.cs">
+      <DependentUpon>Master_DrugGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Master_Group_Rights.xaml.cs">
+      <DependentUpon>Master_Group_Rights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Master_Medicine.xaml.cs">
+      <DependentUpon>Master_Medicine.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master\Master_Reference.xaml.cs">
+      <DependentUpon>Master_Reference.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master\Master_User.xaml.cs">
+      <DependentUpon>Master_User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Maste_Group.xaml.cs">
+      <DependentUpon>Maste_Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Mater_User_Reset_Password.xaml.cs">
+      <DependentUpon>Mater_User_Reset_Password.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\OPD\OPD.xaml.cs">
+      <DependentUpon>OPD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Patient_Registration.xaml.cs">
+      <DependentUpon>Patient_Registration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transaction\Reception\Reception.xaml.cs">
       <DependentUpon>Reception.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Reception\Window_SQL_DEMO.xaml.cs">
+      <DependentUpon>Window_SQL_DEMO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Transaction_Home.xaml.cs">
+      <DependentUpon>Transaction_Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="XSD\DataSetDemo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDemo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XSD\DS_appoint.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_appoint.xsd</DependentUpon>
     </Compile>
     <Compile Include="XSD\DS_license.cs">
       <DependentUpon>DS_license.xsd</DependentUpon>
@@ -93,6 +172,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_license.xsd</DependentUpon>
     </Compile>
+    <Compile Include="XSD\DS_Table.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Table.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XSD\DS_table_temp1.Designer.cs">
+      <DependentUpon>DS_table_temp1.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Page Include="Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,11 +202,71 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Transaction\Reception\Home.xaml">
+    <Page Include="Master\Master_Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Master\Master_Data_Retrieve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master\Master_Diagnosis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master\Master_DrugGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master\Master_Group_Rights.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master\Master_Medicine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master\Master_Reference.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master\Master_User.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master\Maste_Group.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master\Mater_User_Reset_Password.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\OPD\OPD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction\Patient_Registration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Transaction\Reception\Reception.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction\Reception\Window_SQL_DEMO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\Transaction_Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,17 +289,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\Report1.rdlc" />
-    <EmbeddedResource Include="Report\Report2.rdlc" />
-    <EmbeddedResource Include="Report\ReportForm.resx">
-      <DependentUpon>ReportForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="HIMS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Entypo.ttf" />
     <None Include="XSD\DataSetDemo.xsc">
       <DependentUpon>DataSetDemo.xsd</DependentUpon>
     </None>
@@ -157,6 +307,17 @@
     </None>
     <None Include="XSD\DataSetDemo.xss">
       <DependentUpon>DataSetDemo.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_appoint.xsc">
+      <DependentUpon>DS_appoint.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_appoint.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_appoint.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XSD\DS_appoint.xss">
+      <DependentUpon>DS_appoint.xsd</DependentUpon>
     </None>
     <None Include="XSD\DS_license.xsc">
       <DependentUpon>DS_license.xsd</DependentUpon>
@@ -169,6 +330,39 @@
     <None Include="XSD\DS_license.xss">
       <DependentUpon>DS_license.xsd</DependentUpon>
     </None>
+    <None Include="XSD\DS_Table.xsc">
+      <DependentUpon>DS_Table.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_Table.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Table.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XSD\DS_Table.xss">
+      <DependentUpon>DS_Table.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_table_temp.xsc">
+      <DependentUpon>DS_table_temp.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_table_temp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_table_temp1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XSD\DS_table_temp.xss">
+      <DependentUpon>DS_table_temp.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_table_temp1.xsc">
+      <DependentUpon>DS_table_temp1.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\DS_table_temp1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_table_temp1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XSD\DS_table_temp1.xss">
+      <DependentUpon>DS_table_temp1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -176,7 +370,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Master\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\logo-login.png" />
@@ -188,7 +396,26 @@
     <Resource Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TextFile2.txt" />
+    <Resource Include="Img\ExistingUsersKeyIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Google Profile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Photo0037.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XSD\Master\" />
+    <Folder Include="XSD\Transaction\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\images.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
